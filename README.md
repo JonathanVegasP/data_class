@@ -1,4 +1,4 @@
-A library for Dart developers.
+A library to create immutable and comparable data classes with serialization without boilerplate
 
 ## Usage
 
