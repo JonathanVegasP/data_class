@@ -1,17 +1,34 @@
 A library for Dart developers.
 
-Created from templates made available by Stagehand under a BSD-style
-[license](https://github.com/dart-lang/stagehand/blob/master/LICENSE).
-
 ## Usage
 
-A simple usage example:
+A simple usage example with nullSafety:
 
 ```dart
 import 'package:data_class/data_class.dart';
 
-main() {
-  var awesome = new Awesome();
+part 'data_class_example.data.dart';
+
+@data
+abstract class DataClass with _$DataClass {
+  const factory DataClass({required String name}) = _DataClass;
+
+  factory DataClass.fromJson(Map<String, dynamic> json) = _DataClass.fromJson;
+}
+```
+
+A simple usage example without nullSafety:
+
+```dart
+import 'package:data_class/data_class.dart';
+
+part 'data_class_example.data.dart';
+
+@data
+abstract class DataClass with _$DataClass {
+  const factory DataClass({String name}) = _DataClass;
+
+  factory DataClass.fromJson(Map<String, dynamic> json) = _DataClass.fromJson;
 }
 ```
 
@@ -19,4 +36,4 @@ main() {
 
 Please file feature requests and bugs at the [issue tracker][tracker].
 
-[tracker]: http://example.com/issues/replaceme
+[tracker]: https://github.com/JonathanVegasP/data_class/issues
