@@ -1,9 +1,10 @@
 A library to create immutable and comparable data classes with serialization without boilerplate
 
 ## How to install
-<pre>
+
 add the following dependencies to the project's pubspec.yaml
 
+<pre>
 dependencies:
     data_class:
         git: https://github.com/JonathanVegasP/data_class.git
