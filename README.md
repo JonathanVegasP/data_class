@@ -2,16 +2,16 @@ A library to create immutable and comparable data classes with serialization wit
 
 ## How to install
 
-add the following dependencies to the project's pubspec.yaml
+add the following dependencies to the project's pubspec.yaml\
 
-dependencies:
-    data_class:
-        git: https://github.com/JonathanVegasP/data_class.git
+dependencies:\
+    data_class:\
+        git: https://github.com/JonathanVegasP/data_class.git\
 
-dev_dependencies:
-    build_runner: ^2.0.2
-    data_class_builder:
-        git: https://github.com/JonathanVegasP/data_class_builder.git
+dev_dependencies:\
+    build_runner: ^2.0.2\
+    data_class_builder:\
+        git: https://github.com/JonathanVegasP/data_class_builder.git\
 
 ## Usage
 
