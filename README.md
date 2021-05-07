@@ -12,7 +12,7 @@ dev_dependencies:
     build_runner: ^2.0.2
     data_class_builder:
         git: https://github.com/JonathanVegasP/data_class_builder.git
-</prev>
+</pre>
 
 ## Usage
 
