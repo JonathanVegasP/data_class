@@ -45,6 +45,9 @@ abstract class DataClass with _$DataClass {
 }
 ```
 
+then run the command line:
+ - dart run build_runner build or flutter pub run build_runner build
+
 ## Features and bugs
 
 Please file feature requests and bugs at the [issue tracker][tracker].
