@@ -1,57 +1,91 @@
-A library to create immutable and comparable data classes with serialization without boilerplate
-
-## How to install
-
-add the following dependencies to the project's pubspec.yaml
-
-<pre>
-dependencies:
-    data_class:
-        git: https://github.com/JonathanVegasP/data_class.git
-
-dev_dependencies:
-    build_runner: ^2.0.2
-    data_class_builder:
-        git: https://github.com/JonathanVegasP/data_class_builder.git
-</pre>
+Data annotation is used to transform an abstract class into an immutable data class with data_builder.
 
 ## Usage
 
-A simple usage example with nullSafety:
+A simple usage with nullSafety example:
 
 ```dart
-import 'package:data_class/data_class.dart';
+import 'package:data_annotation/data_annotation.dart';
 
-part 'data_class_example.data.dart';
+part 'example.data.dart';
+
+enum ExampleEnum { example }
+
+class Model {
+  Model.fromJson(Map<String, dynamic> json);
+
+  Map<String, dynamic> toJson() => {};
+}
 
 @data
-abstract class DataClass with _$DataClass {
-  const factory DataClass({required String name}) = _DataClass;
+abstract class ExampleDataClass with _$ExampleDataClass {
+  const ExampleDataClass._();
 
-  factory DataClass.fromJson(Map<String, dynamic> json) = _DataClass.fromJson;
+  const factory ExampleDataClass({
+    double? field,
+    String? field1,
+    int? field2,
+    bool? field3,
+    ExampleEnum? field4,
+    @DataKey('model') Model? field5,
+    Uri? field6,
+    BigInt? field7,
+    DateTime? field8,
+    Duration? field9,
+    @DataKey('models') List<Model>? field10,
+    @DataKey('modelByKey') Map<String, Model>? field11,
+  }) = _ExampleDataClass;
+
+  factory ExampleDataClass.fromJson(Map<String, dynamic> json) =
+  _ExampleDataClass.fromJson;
+
+  Map<String, dynamic> toJson();
 }
 ```
 
-A simple usage example without nullSafety:
+A simple usage without nullSafety example:
 
 ```dart
-import 'package:data_class/data_class.dart';
+import 'package:data_annotation/data_annotation.dart';
 
-part 'data_class_example.data.dart';
+part 'example.data.dart';
+
+enum ExampleEnum { example }
+
+class Model {
+  Model.fromJson(Map<String, dynamic> json);
+
+  Map<String, dynamic> toJson() => {};
+}
 
 @data
-abstract class DataClass with _$DataClass {
-  const factory DataClass({String name}) = _DataClass;
+abstract class ExampleDataClass with _$ExampleDataClass {
+  const ExampleDataClass._();
 
-  factory DataClass.fromJson(Map<String, dynamic> json) = _DataClass.fromJson;
+  const factory ExampleDataClass({
+    double field,
+    String field1,
+    int field2,
+    bool field3,
+    ExampleEnum field4,
+    @DataKey('model') Model field5,
+    Uri field6,
+    BigInt field7,
+    DateTime field8,
+    Duration field9,
+    @DataKey('models') List<Model> field10,
+    @DataKey('modelByKey') Map<String, Model> field11,
+  }) = _ExampleDataClass;
+
+  factory ExampleDataClass.fromJson(Map<String, dynamic> json) =
+  _ExampleDataClass.fromJson;
+
+  Map<String, dynamic> toJson();
 }
 ```
-
-then run the command line:
- - dart run build_runner build or flutter pub run build_runner build
 
 ## Features and bugs
 
 Please file feature requests and bugs at the [issue tracker][tracker].
 
-[tracker]: https://github.com/JonathanVegasP/data_class/issues
+[tracker]: http://example.com/issues/replaceme

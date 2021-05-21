@@ -1,5 +1,5 @@
 targets:
   $default:
     builders:
-      data_class_builder:
+      data_builder:
         enabled: true
