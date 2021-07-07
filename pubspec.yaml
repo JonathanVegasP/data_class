@@ -9,3 +9,6 @@ environment:
 dev_dependencies:
   pedantic: ^1.9.0
   test: ^1.14.4
+  data_builder:
+    path: ../data_class_builder
+  build_runner: ^2.0.5

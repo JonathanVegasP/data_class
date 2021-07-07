@@ -3,3 +3,5 @@ targets:
     builders:
       data_builder:
         enabled: true
+      entity_builder:
+        enabled: true

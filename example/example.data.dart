@@ -3,7 +3,7 @@
 part of 'example.dart';
 
 // **************************************************************************
-// Generator: DataClassBuilder
+// Generator: DataBuilder
 // **************************************************************************
 
 mixin _$ExampleDataClass {
@@ -71,6 +71,23 @@ mixin _$ExampleDataClass {
     List<Model>? field10,
     Map<String, Model>? field11,
   });
+
+  Entity toEntity() {
+    return Entity(
+      field: field,
+      field1: field1,
+      field2: field2,
+      field3: field3,
+      field4: field4,
+      field5: field5,
+      field6: field6,
+      field7: field7,
+      field8: field8,
+      field9: field9,
+      field10: field10,
+      field11: field11,
+    );
+  }
 
   @override
   String toString() {
@@ -194,6 +211,23 @@ class _ExampleDataClass extends ExampleDataClass {
       field9: field9 == data ? this.field9 : field9,
       field10: field10 == data ? this.field10 : field10,
       field11: field11 == data ? this.field11 : field11,
+    );
+  }
+
+  factory _ExampleDataClass.fromEntity(Entity entity) {
+    return _ExampleDataClass(
+      field: entity.field,
+      field1: entity.field1,
+      field2: entity.field2,
+      field3: entity.field3,
+      field4: entity.field4,
+      field5: entity.field5,
+      field6: entity.field6,
+      field7: entity.field7,
+      field8: entity.field8,
+      field9: entity.field9,
+      field10: entity.field10,
+      field11: entity.field11,
     );
   }
 

@@ -1,14 +1,18 @@
-/// This class is the core of data_annotation, it is used by the generator and
-/// can be used to generate immutable data classes
+/// [DataClass] is the core of data_annotation, it is used by the generator to
+/// generate immutable data classes
 class DataClass {
-  const DataClass();
+  /// [DataClass.entity] is used to create a relationship with another class
+  final Type? entity;
+
+  const DataClass({this.entity});
 }
 
-/// This annotation is used to generate an immutable data class
+/// [data] is the default annotation to generate immutable data classes
 const data = DataClass();
 
-/// This class is used to change the key of a json like {'Hello World': field1}
+/// [DataKey] is used to change the json's key like
 class DataKey {
+  /// [DataKey.key] is used to declare the name of the json's key
   final String key;
 
   const DataKey(this.key);
